@@ -3,7 +3,7 @@
 namespace ZawgyiToUnicode.Converter.Tests.UnicodeToZawgyi
 {
     [TestFixture]
-    public class UnicodeToZawgyi
+    public class UnicodeToZawgyiTests
     {
         [TestCase("ကနဦး သိန်း၂၅၀ ဖြင့် ဟိုတယ်ပိုင်ရှင်ဖြစ်နိုင်ပါပြီ", "ကနဦး သိန္း၂၅၀ ျဖင့္ ဟိုတယ္ပိုင္ရွင္ျဖစ္ႏိုင္ပါၿပီ")]
         [TestCase("ခိုင်မာတဲ့ ရင်းနှီးမြုပ်နှံမှုကောင်း တစ်ခုကို ပိုင်ဆိုင် နိုင်မယ်", "ခိုင္မာတဲ့ ရင္းႏွီးျမဳပ္ႏွံမႈေကာင္း တစ္ခုကို ပိုင္ဆိုင္ ႏိုင္မယ္")]
