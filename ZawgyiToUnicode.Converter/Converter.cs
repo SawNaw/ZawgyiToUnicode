@@ -9,7 +9,7 @@ namespace ZawgyiToUnicode.Converter
     /// </summary>
     public static class Converter
     {
-        private static List<Rule> UniRules
+        private static List<Rule> UnicodeToZawgyiConversionRules
         {
             get
             {
@@ -98,7 +98,7 @@ namespace ZawgyiToUnicode.Converter
             }
         }
 
-        private static List<Rule> ZGRules
+        private static List<Rule> ZawgyiToUnicodeConversionRules
         {
             get
             {
@@ -227,23 +227,23 @@ namespace ZawgyiToUnicode.Converter
         }
 
         /// <summary>
-        /// Convert Unicode to Zawgyi
+        /// Returns the Zawgyi equivalent of the given Unicode-compliant string.
         /// </summary>
-        /// <param name="Uni">Unicode string</param>
-        /// <returns>Zawgyi string</returns>
-        public static string Uni2ZG(string Uni)
+        /// <param name="unicodeText">The Unicode-compliant string to convert to Zawgyi text.</param>
+        /// <returns>The Zawgyi equivalent of the given Unicode-compliant string.</returns>
+        public static string ToZawgyi(string unicodeText)
         {
-            return Convert(UniRules, Uni);
+            return Convert(UnicodeToZawgyiConversionRules, unicodeText);
         }
 
         /// <summary>
-        /// Convert Zawgyi to Unicode
+        /// Returns the unicode-compliant equivalent of the given Zawgyi string.
         /// </summary>
-        /// <param name="ZG">Zawgyi string</param>
-        /// <returns>Unicode string</returns>
-        public static string ZG2Uni(string ZG)
+        /// <param name="zawgyiText">The Zawgyi string to convert to Unicode-compliant text.</param>
+        /// <returns>The Unicode-compliant equivalent of the given Zawgyi string</returns>
+        public static string ToUnicode(string zawgyiText)
         {
-            return Convert(ZGRules, ZG);
+            return Convert(ZawgyiToUnicodeConversionRules, zawgyiText);
         }
 
         private static string Convert(List<Rule> Rules, string input)
