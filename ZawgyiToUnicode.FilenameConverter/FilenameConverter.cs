@@ -7,17 +7,33 @@ namespace ZawgyiToUnicode.FilenameConverter
     public class FilenameConverter
     {
         /// <summary>
-        /// Gets the directory where this <see cref="FilenameConverter"/> will operate.
+        /// Gets the directory where this <see cref="FilenameConverter"/> will take input files.
         /// </summary>
-        public string WorkingDirectory { get; private set; }
+        public string InputDirectory { get; private set; }
+
+        /// <summary>
+        /// Gets the directory where this <see cref="FilenameConverter"/> will output files.
+        /// </summary>
+        public string OutputDirectory { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FilenameConverter"/> class.
         /// </summary>
-        /// <param name="workingDirectory">The directory where this <see cref="FilenameConverter"/> will operate.</param>
-        public FilenameConverter(string workingDirectory)
+        /// <param name="inputDirectory">The directory that contains input files.</param>
+        public FilenameConverter()
         {
-            this.WorkingDirectory = workingDirectory;
+            this.InputDirectory = Directory.GetCurrentDirectory();
+            this.OutputDirectory = $"{this.InputDirectory}\\Unicode_File_Names";
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilenameConverter"/> class.
+        /// </summary>
+        /// <param name="inputDirectory">The directory that contains input files.</param>
+        public FilenameConverter(string inputDirectory)
+        {
+            this.InputDirectory = inputDirectory;
+            this.OutputDirectory = $"{this.InputDirectory}\\Unicode_File_Names";
         }
 
         /// <summary>
@@ -25,27 +41,26 @@ namespace ZawgyiToUnicode.FilenameConverter
         /// </summary>
         public void ConvertAllFilenamesToUnicode()
         {
-            var directoryInfo = new DirectoryInfo(this.WorkingDirectory);
-            string outputDirectory = $"{this.WorkingDirectory}_Unicode_File_Names";
-            Directory.CreateDirectory(outputDirectory);
+            var inputDir = new DirectoryInfo(this.InputDirectory);
+            Directory.CreateDirectory(this.OutputDirectory);
 
-            var allFiles = directoryInfo.GetFiles();
+            var allFiles = inputDir.GetFiles();
 
             foreach (var zawgyiFile in allFiles)
             {
                 string convertedFilename = Converter.ToUnicode(zawgyiFile.Name);
 
-                if (zawgyiFile.Name != convertedFilename)
+                if (zawgyiFile.Name == convertedFilename)
                 {
                     continue;
                 }
 
-                if (File.Exists($"{outputDirectory}\\{convertedFilename}"))
+                if (File.Exists($"{this.OutputDirectory}\\{convertedFilename}"))
                 {
                     continue;
                 }
 
-                File.Move(zawgyiFile.FullName, $"{outputDirectory}\\{convertedFilename}");
+                File.Copy(zawgyiFile.FullName, $"{this.OutputDirectory}\\{convertedFilename}");
             }
         }
     }

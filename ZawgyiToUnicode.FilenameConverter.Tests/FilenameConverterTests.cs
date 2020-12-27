@@ -10,7 +10,7 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
     public class FilenameConverterTests
     {
         private string inputFilePath = $"{Directory.GetCurrentDirectory()}\\TestFiles\\";
-        private string outputFilePath = $"{Directory.GetCurrentDirectory()}\\TestFiles_Unicode_File_Names\\";
+        private string outputFilePath = $"{Directory.GetCurrentDirectory()}\\TestFiles\\Unicode_File_Names\\";
 
         private static List<string> zawgyiFilenames = new List<string> {
                 "တပ္မက္မႈ",
@@ -22,6 +22,22 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
                 Converter.ToUnicode(zawgyiFilenames[1]),
                 Converter.ToUnicode(zawgyiFilenames[2])
             };
+
+        [Test]
+        public void DefaultConstructor_SetsInputDirectory_ToExpected()
+        {
+            var fc = new FilenameConverter();
+            var expected = $"{Directory.GetCurrentDirectory()}";
+            Assert.That(fc.InputDirectory, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void DefaultConstructor_SetsOutputDirectory_ToExpected()
+        {
+            var fc = new FilenameConverter();
+            var expected = $"{Directory.GetCurrentDirectory()}\\Unicode_File_Names";
+            Assert.That(fc.OutputDirectory, Is.EqualTo(expected));
+        }
 
         [Test]
         public void ConvertFilenameToUnicode_ConvertsZawgyiFilenames_ToUnicode()
@@ -65,25 +81,6 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
 
             // Clean up
             DeleteTestFiles(zawgyiFilenames, inputFilePath);
-        }
-
-        [Test]
-        public void ConvertFilenameToUnicode_DoesNotChange_NumberOfFilesInSpecifiedDirectory()
-        {
-            var filenames = new List<string> { "တပ္မက္မႈ", "အေၾကာင္းခံေၾကာင့္", "ျပင္းစြာ" };
-
-            CreateTestFiles(filenames, inputFilePath);
-
-            FilenameConverter fc = new FilenameConverter(inputFilePath);
-            fc.ConvertAllFilenamesToUnicode();
-
-            foreach (var file in filenames)
-            {
-                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
-            }
-
-            DeleteTestFiles(filenames, inputFilePath);
-            DeleteTestFiles(filenames, outputFilePath);
         }
 
         private static void CreateTestFiles(List<string> filenames, string filepath)
