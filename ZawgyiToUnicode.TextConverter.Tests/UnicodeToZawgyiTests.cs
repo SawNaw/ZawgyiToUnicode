@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace ZawgyiToUnicode.Converter.Tests.UnicodeToZawgyi
+namespace ZawgyiToUnicode.TextConverter.Tests.UnicodeToZawgyi
 {
     [TestFixture]
     public class UnicodeToZawgyiTests

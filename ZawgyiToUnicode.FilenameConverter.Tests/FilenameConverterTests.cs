@@ -1,27 +1,105 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using ZawgyiToUnicode.TextConverter;
 
 namespace ZawgyiToUnicode.FilenameConverter.Tests
 {
     [TestFixture]
     public class FilenameConverterTests
     {
+        private string inputFilePath = $"{Directory.GetCurrentDirectory()}\\TestFiles\\";
+        private string outputFilePath = $"{Directory.GetCurrentDirectory()}\\TestFiles_Unicode_File_Names\\";
+
+        private static List<string> zawgyiFilenames = new List<string> {
+                "တပ္မက္မႈ",
+                "အေၾကာင္းခံေၾကာင့္",
+                "ျပင္းစြာ" };
+
+        private static List<string> expectedConvertedFilenames = new List<string> {
+                Converter.ToUnicode(zawgyiFilenames[0]),
+                Converter.ToUnicode(zawgyiFilenames[1]),
+                Converter.ToUnicode(zawgyiFilenames[2])
+            };
+
         [Test]
-        public void CreateZawgyiFile_CreatesFile_WithGivenZawgyiNames_InSpecifiedDirectory()
+        public void ConvertFilenameToUnicode_ConvertsZawgyiFilenames_ToUnicode()
         {
-            const string filename1 = "တပ္မက္မႈ";
-            const string filename2 = "အေၾကာင္းခံေၾကာင့္";
-            const string filename3 = "ျပင္းစြာ";
-            const string filepath = @"C:\ZawgyiFiles\";
+            // Arrange
+            CreateTestFiles(zawgyiFilenames, inputFilePath);
 
-            TestHelper.CreateFile(filename1, filepath);
-            TestHelper.CreateFile(filename2, filepath);
-            TestHelper.CreateFile(filename3, filepath);
+            // Act
+            FilenameConverter fc = new FilenameConverter(inputFilePath);
+            fc.ConvertAllFilenamesToUnicode();
 
-            Assert.That(File.Exists($"{filepath}\\{filename1}"), Is.True);
-            Assert.That(File.Exists($"{filepath}\\{filename2}"), Is.True);
-            Assert.That(File.Exists($"{filepath}\\{filename3}"), Is.True);
+            // Assert
+            foreach (var file in expectedConvertedFilenames)
+            {
+                Assert.That(File.Exists($"{outputFilePath}\\{file}"), Is.True);
+                Assert.That(File.Exists($"{outputFilePath}\\{file}"), Is.True);
+                Assert.That(File.Exists($"{outputFilePath}\\{file}"), Is.True);
+            }
+
+            // Clean up
+            DeleteTestFiles(zawgyiFilenames, inputFilePath);
+        }
+
+        [Test]
+        public void ConvertFilenameToUnicode_DoesNotAlter_ExistingZawgyiFiles()
+        {
+            // Arrange
+            CreateTestFiles(zawgyiFilenames, inputFilePath);
+
+            // Act
+            FilenameConverter fc = new FilenameConverter(inputFilePath);
+            fc.ConvertAllFilenamesToUnicode();
+
+            // Assert
+            foreach (var file in zawgyiFilenames)
+            {
+                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
+                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
+                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
+            }
+
+            // Clean up
+            DeleteTestFiles(zawgyiFilenames, inputFilePath);
+        }
+
+        [Test]
+        public void ConvertFilenameToUnicode_DoesNotChange_NumberOfFilesInSpecifiedDirectory()
+        {
+            var filenames = new List<string> { "တပ္မက္မႈ", "အေၾကာင္းခံေၾကာင့္", "ျပင္းစြာ" };
+
+            CreateTestFiles(filenames, inputFilePath);
+
+            FilenameConverter fc = new FilenameConverter(inputFilePath);
+            fc.ConvertAllFilenamesToUnicode();
+
+            foreach (var file in filenames)
+            {
+                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
+            }
+
+            DeleteTestFiles(filenames, inputFilePath);
+            DeleteTestFiles(filenames, outputFilePath);
+        }
+
+        private static void CreateTestFiles(List<string> filenames, string filepath)
+        {
+            foreach (var file in filenames)
+            {
+                TestHelper.CreateTestFile(file, filepath);
+            }
+        }
+
+        private static void DeleteTestFiles(List<string> filenames, string filepath)
+        {
+            if (Directory.Exists(filepath))
+            {
+                Directory.Delete(filepath, true);
+            }
         }
     }
 }
