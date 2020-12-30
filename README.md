@@ -1,5 +1,5 @@
 # ZawgyiToUnicode
-Conversion between Zawgyi and Unicode-compliant Burmese fonts.
+Text and filename conversion between Zawgyi and Unicode-compliant Burmese fonts.
 
 Credit to GitHub user mgthantzin for the converter code. This is his repo: https://github.com/mgthantzin/mmfont.Net/tree/master/mmfont.Net
 
