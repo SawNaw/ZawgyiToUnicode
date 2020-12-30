@@ -41,6 +41,11 @@ namespace ZawgyiToUnicode.FilenameConverter
         /// </summary>
         public void ConvertAllFilenamesToUnicode()
         {
+            if (this.InputDirectory == this.OutputDirectory)
+            {
+                throw new InvalidOperationException("The output directory cannot be the same as the input directory.");
+            }
+
             var inputDir = new DirectoryInfo(this.InputDirectory);
             Directory.CreateDirectory(this.OutputDirectory);
 
