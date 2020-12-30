@@ -11,7 +11,7 @@ namespace ZawgyiToUnicode.Converter.Tests.UnicodeToZawgyi
         [TestCase("သီဟိုဠ်မှ ဉာဏ်ကြီးရှင်သည် အာယုဝဍ္ဎနဆေးညွှန်းစာကို ဇလွန်ဈေးဘေး ဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက် ဂဃနဏဖတ်ခဲ့သည်။", "သီဟိုဠ္မွ ဉာဏ္ႀကီးရွင္သည္ အာယုဝၯနေဆးၫႊန္းစာကို ဇလြန္ေဈးေဘး ဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္ ဂဃနဏဖတ္ခဲ့သည္။")]
         public void SimpleUnicodeStrings_ConvertToZawgyiCorrectly(string unicodeText, string expectedZawgyiText)
         {
-            Assert.That(Converter.ToZawgyi(unicodeText), Is.EqualTo(expectedZawgyiText));
+            Assert.That(Convert.ToZawgyi(unicodeText), Is.EqualTo(expectedZawgyiText));
         }
 
         [TestCase("တပ်မက်မှု ‘တဏှာ’ ချုပ်ရ၏၊ တပ်မက်မှု ‘တဏှာ’ ချုပ်ခြင်းကြောင့် ပြင်း စွာ စွဲလမ်းမှု ‘ဥပါဒါန်’ ချုပ်ရ၏၊ ပြင်းစွာ စွဲလမ်းမှု ‘ဥပါဒါန်’ ချုပ်ခြင်းကြောင့် ဘဝ ချုပ်ရ၏၊ ဘဝ ချုပ်ခြင်း ကြောင့် ပဋိသန္ဓေနေမှု ‘ဇာတိ’ ချုပ်ရ၏၊ ဇာတိ ချုပ်ခြင်းကြောင့် အိုမှု ‘ဇရာ’၊ သေမှု ‘မရဏ’၊ စိုးရိမ်မှု",
@@ -19,7 +19,7 @@ namespace ZawgyiToUnicode.Converter.Tests.UnicodeToZawgyi
         [TestCase("ရဟန်းတို့ ဤတရားကို ပဋိစ္စသမုပ္ပါဒ်ဟု ဆိုအပ်၏။", "ရဟန္းတို႔ ဤတရားကို ပဋိစၥသမုပၸါဒ္ဟု ဆိုအပ္၏။")]
         public void ComplexZawgyiStrings_ConvertToUnicodeCorrectly(string unicodeText, string expectedZawgyiText)
         {
-            Assert.That(Converter.ToZawgyi(unicodeText), Is.EqualTo(expectedZawgyiText));
+            Assert.That(Convert.ToZawgyi(unicodeText), Is.EqualTo(expectedZawgyiText));
         }
     }
 }
