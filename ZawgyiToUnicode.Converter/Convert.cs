@@ -6,9 +6,12 @@ namespace ZawgyiToUnicode.Converter
     /// <summary>
     /// Provides methods to convert non-Unicode compliant Zawgyi text to Unicode-compliant Burmese text, and vice-versa.
     /// </summary>
-    public static class Converter
+    public static class Convert
     {
-        static Converter()
+        private static readonly Dictionary<string, string> unicodeToZawgyiConversionRules;
+        private static readonly Dictionary<string, string> zawgyiToUnicodeConversionRules;
+
+        static Convert()
         {
             unicodeToZawgyiConversionRules = new Dictionary<string, string>();
             zawgyiToUnicodeConversionRules = new Dictionary<string, string>();
@@ -16,14 +19,31 @@ namespace ZawgyiToUnicode.Converter
             AddConversionRules();
         }
 
+        /// <summary>
+        /// Returns the Zawgyi equivalent of the given Unicode-compliant string.
+        /// </summary>
+        /// <param name="unicodeText">The Unicode-compliant string to convert to Zawgyi text.</param>
+        /// <returns>The Zawgyi equivalent of the given Unicode-compliant string.</returns>
+        public static string ToZawgyi(string unicodeText)
+        {
+            return ConvertUsingRules(unicodeToZawgyiConversionRules, unicodeText);
+        }
+
+        /// <summary>
+        /// Returns the Unicode-compliant equivalent of the given Zawgyi string.
+        /// </summary>
+        /// <param name="zawgyiText">The Zawgyi string to convert to Unicode-compliant text.</param>
+        /// <returns>The Unicode-compliant equivalent of the given Zawgyi string</returns>
+        public static string ToUnicode(string zawgyiText)
+        {
+            return ConvertUsingRules(zawgyiToUnicodeConversionRules, zawgyiText);
+        }
+
         private static void AddConversionRules()
         {
             AddZawgyiToUnicodeConversionRules();
             AddUnicodeToZawgyiConversionRules();
         }
-
-        private static readonly Dictionary<string, string> unicodeToZawgyiConversionRules;
-        private static readonly Dictionary<string, string> zawgyiToUnicodeConversionRules;
 
         private static void AddUnicodeToZawgyiConversionRules()
         {
@@ -230,26 +250,6 @@ namespace ZawgyiToUnicode.Converter
             zawgyiToUnicodeConversionRules.Add("\u1047((?=[\u1000-\u1021]\u103a)|(?=[\u102c-\u1030\u1032\u1036-\u1038\u103d\u103e]))", "\u101b");
         }
 
-        /// <summary>
-        /// Returns the Zawgyi equivalent of the given Unicode-compliant string.
-        /// </summary>
-        /// <param name="unicodeText">The Unicode-compliant string to convert to Zawgyi text.</param>
-        /// <returns>The Zawgyi equivalent of the given Unicode-compliant string.</returns>
-        public static string ToZawgyi(string unicodeText)
-        {
-            return ConvertUsingRules(unicodeToZawgyiConversionRules, unicodeText);
-        }
-
-        /// <summary>
-        /// Returns the unicode-compliant equivalent of the given Zawgyi string.
-        /// </summary>
-        /// <param name="zawgyiText">The Zawgyi string to convert to Unicode-compliant text.</param>
-        /// <returns>The Unicode-compliant equivalent of the given Zawgyi string</returns>
-        public static string ToUnicode(string zawgyiText)
-        {
-            return ConvertUsingRules(zawgyiToUnicodeConversionRules, zawgyiText);
-        }
-
         private static string ConvertUsingRules(IReadOnlyDictionary<string, string> conversionRules, string input)
         {
             foreach (var rule in conversionRules)
@@ -262,4 +262,3 @@ namespace ZawgyiToUnicode.Converter
         }
     }
 }
-
