@@ -6,12 +6,12 @@ namespace ZawgyiToUnicode.TextConverter
     /// <summary>
     /// Provides methods to convert non-Unicode compliant Zawgyi text to Unicode-compliant Burmese text, and vice-versa.
     /// </summary>
-    public static class Converter
+    public static class Convert
     {
         private static readonly Dictionary<string, string> UnicodeToZawgyiConversionRules;
         private static readonly Dictionary<string, string> ZawgyiToUnicodeConversionRules;
 
-        static Converter()
+        static Convert()
         {
             UnicodeToZawgyiConversionRules = new Dictionary<string, string>();
             ZawgyiToUnicodeConversionRules = new Dictionary<string, string>();
@@ -30,7 +30,7 @@ namespace ZawgyiToUnicode.TextConverter
         }
 
         /// <summary>
-        /// Returns the unicode-compliant equivalent of the given Zawgyi string.
+        /// Returns the Unicode-compliant equivalent of the given Zawgyi string.
         /// </summary>
         /// <param name="zawgyiText">The Zawgyi string to convert to Unicode-compliant text.</param>
         /// <returns>The Unicode-compliant equivalent of the given Zawgyi string</returns>

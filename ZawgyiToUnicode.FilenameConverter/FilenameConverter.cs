@@ -48,7 +48,7 @@ namespace ZawgyiToUnicode.FilenameConverter
 
             foreach (var zawgyiFile in allFiles)
             {
-                string convertedFilename = Converter.ToUnicode(zawgyiFile.Name);
+                string convertedFilename = TextConverter.Convert.ToUnicode(zawgyiFile.Name);
 
                 if (zawgyiFile.Name == convertedFilename)
                 {

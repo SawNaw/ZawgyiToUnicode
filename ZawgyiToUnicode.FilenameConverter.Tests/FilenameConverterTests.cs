@@ -18,9 +18,9 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
                 "ျပင္းစြာ" };
 
         private static List<string> expectedConvertedFilenames = new List<string> {
-                Converter.ToUnicode(zawgyiFilenames[0]),
-                Converter.ToUnicode(zawgyiFilenames[1]),
-                Converter.ToUnicode(zawgyiFilenames[2])
+                TextConverter.Convert.ToUnicode(zawgyiFilenames[0]),
+                TextConverter.Convert.ToUnicode(zawgyiFilenames[1]),
+                TextConverter.Convert.ToUnicode(zawgyiFilenames[2])
             };
 
         [Test]
