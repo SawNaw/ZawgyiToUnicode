@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.TextConvert
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.TextConverter.Tests", "ZawgyiToUnicode.TextConverter.Tests\ZawgyiToUnicode.TextConverter.Tests.csproj", "{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZawgyiToUnicode.FilenameConverter.QuickAndDirtyUI", "ZawgyiToUnicode.FilenameConverter.QuickAndDirtyUI\ZawgyiToUnicode.FilenameConverter.QuickAndDirtyUI.csproj", "{449ECBEF-AF02-483C-A4E4-B5695C732844}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
