@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using ZawgyiToUnicode.TextConverter;
 
 namespace ZawgyiToUnicode.FilenameConverter.Tests
 {

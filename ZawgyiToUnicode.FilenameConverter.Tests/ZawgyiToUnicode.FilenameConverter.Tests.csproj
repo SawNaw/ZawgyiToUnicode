@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ZawgyiToUnicode.FilenameConverter\ZawgyiToUnicode.FilenameConverter.csproj" />
+    <ProjectReference Include="..\ZawgyiToUnicode.FilenameConverter\ZawgyiToUnicode.FilenameConverter.Core.csproj" />
   </ItemGroup>
 
 </Project>

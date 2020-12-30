@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.FilenameConverter", "ZawgyiToUnicode.FilenameConverter\ZawgyiToUnicode.FilenameConverter.csproj", "{D593C106-D358-4F6B-83E6-BB2341C342A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.FilenameConverter.Core", "ZawgyiToUnicode.FilenameConverter\ZawgyiToUnicode.FilenameConverter.Core.csproj", "{D593C106-D358-4F6B-83E6-BB2341C342A7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.FilenameConverter.Tests", "ZawgyiToUnicode.FilenameConverter.Tests\ZawgyiToUnicode.FilenameConverter.Tests.csproj", "{C3D71477-3405-45A2-883D-F4ED7ABA1FCC}"
 EndProject
