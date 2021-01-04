@@ -89,9 +89,9 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
 
             cv.ConvertAllFilenamesToUnicode(true);
 
-            Assert.That(File.Exists($"{cv.OutputDirectory}\\အမိုက်စားသီချင်းများ\\ပထမစုစည်းမှု\\ဘာညာကွိကွ.mp3"), Is.True);
-            Assert.That(File.Exists($"{cv.OutputDirectory}\\အမိုက်စားသီချင်းများ\\ဒုတိယစုစည်းမှု\\ဘာညာကွိကွ.mp3"), Is.True);
-            Assert.That(File.Exists($"{cv.OutputDirectory}\\အမိုက်စားသီချင်းများ\\ဒုတိယစုစည်းမှု\\ဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက်.mp3"), Is.True);
+            Assert.That(File.Exists($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}\\အမိုက်စားသီချင်းများ\\ပထမစုစည်းမှု\\Unicode_File_Names\\ဘာညာကွိကွ.mp3"), Is.True);
+            Assert.That(File.Exists($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}\\အမိုက်စားသီချင်းများ\\ဒုတိယစုစည်းမှု\\Unicode_File_Names\\ဘာညာကွိကွ.mp3"), Is.True);
+            Assert.That(File.Exists($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}\\အမိုက်စားသီချင်းများ\\ဒုတိယစုစည်းမှု\\Unicode_File_Names\\ဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက်.mp3"), Is.True);
 
             // Clean up test files
             Directory.Delete($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}");
@@ -123,10 +123,10 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
             Directory.CreateDirectory($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ပထမစုစည္းမႈ\\");
             Directory.CreateDirectory($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ဒုတိယစုစည္းမႈ\\");
 
-            FileStream fs = File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အလြန္ေကာင္းေသာ သီခ်င္းမ်ား\\ပထမစုစည္းမႈ\\ဘာညာကြိကြ.mp3");
-            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ပထမစုစည္းမႈ\\ဘာညာကြိကြ.mp3");
-            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ဒုတိယစုစည္းမႈ\\ဘာညာကြိကြ.mp3");
-            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ဒုတိယစုစည္းမႈ\\ဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္.mp3");
+            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အလြန္ေကာင္းေသာ သီခ်င္းမ်ား\\ပထမစုစည္းမႈ\\ဘာညာကြိကြ.mp3").Close();
+            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ပထမစုစည္းမႈ\\ဘာညာကြိကြ.mp3").Close();
+            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ဒုတိယစုစည္းမႈ\\ဘာညာကြိကြ.mp3").Close();
+            File.Create($"{Directory.GetCurrentDirectory()}\\{relativePath}\\အမိုက္စားသီခ်င္းမ်ား\\ဒုတိယစုစည္းမႈ\\ဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္.mp3").Close();
 
         }
     }

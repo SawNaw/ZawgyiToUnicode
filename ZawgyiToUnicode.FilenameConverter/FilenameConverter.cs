@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using ZawgyiToUnicode.Core;
 
 namespace ZawgyiToUnicode.FilenameConverter
 {
     public class FilenameConverter
     {
+        private const string outputFolderName = "Unicode_File_Names";
+
         /// <summary>
         /// Gets the directory where this <see cref="FilenameConverter"/> will take input files.
         /// </summary>
@@ -23,7 +26,7 @@ namespace ZawgyiToUnicode.FilenameConverter
         public FilenameConverter()
         {
             this.InputDirectory = Directory.GetCurrentDirectory();
-            this.OutputDirectory = $"{this.InputDirectory}\\Unicode_File_Names";
+            this.OutputDirectory = $"{this.InputDirectory}\\{outputFolderName}";
         }
 
         /// <summary>
@@ -33,7 +36,7 @@ namespace ZawgyiToUnicode.FilenameConverter
         public FilenameConverter(string inputDirectory)
         {
             this.InputDirectory = inputDirectory;
-            this.OutputDirectory = $"{this.InputDirectory}\\Unicode_File_Names";
+            this.OutputDirectory = $"{this.InputDirectory}\\{outputFolderName}";
         }
 
         /// <summary>
@@ -58,6 +61,16 @@ namespace ZawgyiToUnicode.FilenameConverter
                 if (zawgyiFile.Name != convertedFilename && !File.Exists($"{this.OutputDirectory}\\{convertedFilename}"))
                 {
                     File.Copy(zawgyiFile.FullName, $"{this.OutputDirectory}\\{convertedFilename}");
+                }
+            }
+
+            if (recursive)
+            {
+                var subDirectories = inputDir.GetDirectories();
+                foreach(var directory in subDirectories.Where(x => !x.FullName.Contains(outputFolderName)))
+                {
+                    var fc = new FilenameConverter(directory.FullName);
+                    fc.ConvertAllFilenamesToUnicode(true);
                 }
             }
         }
