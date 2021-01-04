@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace ZawgyiToUnicode.TextConverter
+namespace ZawgyiToUnicode.Core
 {
     /// <summary>
     /// Provides methods to convert non-Unicode compliant Zawgyi text to Unicode-compliant Burmese text, and vice-versa.

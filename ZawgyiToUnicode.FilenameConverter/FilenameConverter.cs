@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using ZawgyiToUnicode.TextConverter;
+using ZawgyiToUnicode.Core;
 
 namespace ZawgyiToUnicode.FilenameConverter
 {
@@ -53,19 +53,12 @@ namespace ZawgyiToUnicode.FilenameConverter
 
             foreach (var zawgyiFile in allFiles)
             {
-                string convertedFilename = TextConverter.Convert.ToUnicode(zawgyiFile.Name);
+                string convertedFilename = ZawgyiToUnicode.Core.Convert.ToUnicode(zawgyiFile.Name);
 
-                if (zawgyiFile.Name == convertedFilename)
+                if (zawgyiFile.Name != convertedFilename && !File.Exists($"{this.OutputDirectory}\\{convertedFilename}"))
                 {
-                    continue;
+                    File.Copy(zawgyiFile.FullName, $"{this.OutputDirectory}\\{convertedFilename}");
                 }
-
-                if (File.Exists($"{this.OutputDirectory}\\{convertedFilename}"))
-                {
-                    continue;
-                }
-
-                File.Copy(zawgyiFile.FullName, $"{this.OutputDirectory}\\{convertedFilename}");
             }
         }
     }

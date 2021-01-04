@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using System.IO;
+using ZawgyiToUnicode.Core;
 
 namespace ZawgyiToUnicode.FilenameConverter.Tests
 {
@@ -16,9 +17,9 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
                 "ျပင္းစြာ" };
 
         private static List<string> expectedConvertedFilenames = new List<string> {
-                TextConverter.Convert.ToUnicode(zawgyiFilenames[0]),
-                TextConverter.Convert.ToUnicode(zawgyiFilenames[1]),
-                TextConverter.Convert.ToUnicode(zawgyiFilenames[2])
+                ZawgyiToUnicode.Core.Convert.ToUnicode(zawgyiFilenames[0]),
+                ZawgyiToUnicode.Core.Convert.ToUnicode(zawgyiFilenames[1]),
+                ZawgyiToUnicode.Core.Convert.ToUnicode(zawgyiFilenames[2])
             };
 
         [Test]
@@ -75,6 +76,19 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
 
             // Clean up
             DeleteTestFiles(zawgyiFilenames, inputFilePath);
+        }
+
+        [Test]
+        public void Conversion_WorksInFolders_AndSubFolders()
+        {
+            // Arrange
+            string testFilesRelativePath = "Test3AX49";
+            FileCreator.CreateZawgyiTestFileStructure(testFilesRelativePath);
+
+            Assert.Fail();
+
+            // Clean up test files
+            Directory.Delete($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}");
         }
 
         private static void CreateTestFiles(List<string> filenames, string filepath)

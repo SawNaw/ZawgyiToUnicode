@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.FilenameCon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.FilenameConverter.Tests", "ZawgyiToUnicode.FilenameConverter.Tests\ZawgyiToUnicode.FilenameConverter.Tests.csproj", "{C3D71477-3405-45A2-883D-F4ED7ABA1FCC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.TextConverter", "ZawgyiToUnicode.TextConverter\ZawgyiToUnicode.TextConverter.csproj", "{A531E477-F0F5-478A-873F-3B223A1ED03A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.TextConverter.Tests", "ZawgyiToUnicode.TextConverter.Tests\ZawgyiToUnicode.TextConverter.Tests.csproj", "{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZawgyiToUnicode.FilenameConverter.QuickAndDirtyUI", "ZawgyiToUnicode.FilenameConverter.QuickAndDirtyUI\ZawgyiToUnicode.FilenameConverter.QuickAndDirtyUI.csproj", "{449ECBEF-AF02-483C-A4E4-B5695C732844}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.Core", "ZawgyiToUnicode.Core\ZawgyiToUnicode.Core.csproj", "{9788C451-CC47-4597-B958-FE6365279AD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZawgyiToUnicode.Core.Tests", "ZawgyiToUnicode.Core.Tests\ZawgyiToUnicode.Core.Tests.csproj", "{AE2377F2-EB45-41FA-A2AF-B685A770480B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +27,18 @@ Global
 		{C3D71477-3405-45A2-883D-F4ED7ABA1FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3D71477-3405-45A2-883D-F4ED7ABA1FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D71477-3405-45A2-883D-F4ED7ABA1FCC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A531E477-F0F5-478A-873F-3B223A1ED03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A531E477-F0F5-478A-873F-3B223A1ED03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A531E477-F0F5-478A-873F-3B223A1ED03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A531E477-F0F5-478A-873F-3B223A1ED03A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95E4711A-9918-46DE-8BAE-02A1B5A57DBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{449ECBEF-AF02-483C-A4E4-B5695C732844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9788C451-CC47-4597-B958-FE6365279AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9788C451-CC47-4597-B958-FE6365279AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9788C451-CC47-4597-B958-FE6365279AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9788C451-CC47-4597-B958-FE6365279AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2377F2-EB45-41FA-A2AF-B685A770480B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2377F2-EB45-41FA-A2AF-B685A770480B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2377F2-EB45-41FA-A2AF-B685A770480B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2377F2-EB45-41FA-A2AF-B685A770480B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
