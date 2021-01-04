@@ -39,7 +39,7 @@ namespace ZawgyiToUnicode.FilenameConverter
         /// <summary>
         /// Converts all the filenames in the working directory from Zawgyi to Unicode.
         /// </summary>
-        public void ConvertAllFilenamesToUnicode()
+        public void ConvertAllFilenamesToUnicode(bool recursive)
         {
             if (this.InputDirectory == this.OutputDirectory)
             {

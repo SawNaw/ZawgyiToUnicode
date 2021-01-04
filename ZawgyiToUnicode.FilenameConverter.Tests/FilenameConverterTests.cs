@@ -46,7 +46,7 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
 
             // Act
             FilenameConverter fc = new FilenameConverter(inputFilePath);
-            fc.ConvertAllFilenamesToUnicode();
+            fc.ConvertAllFilenamesToUnicode(false);
 
             // Assert
             foreach (var file in expectedConvertedFilenames)
@@ -66,7 +66,7 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
 
             // Act
             FilenameConverter fc = new FilenameConverter(inputFilePath);
-            fc.ConvertAllFilenamesToUnicode();
+            fc.ConvertAllFilenamesToUnicode(false);
 
             // Assert
             foreach (var file in zawgyiFilenames)
@@ -85,7 +85,9 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
             string testFilesRelativePath = "Test3AX49";
             FileCreator.CreateZawgyiTestFileStructure(testFilesRelativePath);
 
-            Assert.Fail();
+            FilenameConverter cv = new FilenameConverter($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}");
+
+            cv.ConvertAllFilenamesToUnicode(true);
 
             // Clean up test files
             Directory.Delete($"{Directory.GetCurrentDirectory()}\\{testFilesRelativePath}");
