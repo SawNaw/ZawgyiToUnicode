@@ -51,8 +51,6 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
             foreach (var file in expectedConvertedFilenames)
             {
                 Assert.That(File.Exists($"{outputFilePath}\\{file}"), Is.True);
-                Assert.That(File.Exists($"{outputFilePath}\\{file}"), Is.True);
-                Assert.That(File.Exists($"{outputFilePath}\\{file}"), Is.True);
             }
 
             // Clean up
@@ -73,8 +71,6 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
             foreach (var file in zawgyiFilenames)
             {
                 Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
-                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
-                Assert.That(File.Exists($"{inputFilePath}\\{file}"), Is.True);
             }
 
             // Clean up
@@ -85,7 +81,7 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
         {
             foreach (var file in filenames)
             {
-                TestHelper.CreateTestFile(file, filepath);
+                FileCreator.CreateTestFile(file, filepath);
             }
         }
 

@@ -17,9 +17,9 @@ namespace ZawgyiToUnicode.FilenameConverter.Tests
             const string filename3 = "ျပင္းစြာ";
             const string filepath = @"C:\ZawgyiFiles\";
 
-            TestHelper.CreateTestFile(filename1, filepath);
-            TestHelper.CreateTestFile(filename2, filepath);
-            TestHelper.CreateTestFile(filename3, filepath);
+            FileCreator.CreateTestFile(filename1, filepath);
+            FileCreator.CreateTestFile(filename2, filepath);
+            FileCreator.CreateTestFile(filename3, filepath);
 
             Assert.That(File.Exists($"{filepath}\\{filename1}"), Is.True);
             Assert.That(File.Exists($"{filepath}\\{filename2}"), Is.True);

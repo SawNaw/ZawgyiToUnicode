@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ZawgyiToUnicode.FilenameConverter.Tests
 {
-    public static class TestHelper
+    public static class FileCreator
     {
         public static void CreateTestFile(string filename, string filepath)
         {
