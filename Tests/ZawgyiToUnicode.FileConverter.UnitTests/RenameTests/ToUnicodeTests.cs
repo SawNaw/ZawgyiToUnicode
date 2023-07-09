@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 namespace ZawgyiToUnicode.FileConverter.UnitTests.RenameTests;
 
@@ -8,8 +8,8 @@ public class ToUnicodeTests
     public void ToUnicode_RenamesFile_ToUnicode()
     {
         string testDirectory = Path.Combine(Environment.CurrentDirectory, $"UnitTestsTemporary-{Guid.NewGuid()}");
-        const string zawgyiFileName = "သီဟိုဠ္မွ ဉာဏ္ႀကီးရွင္သည္ အာယုဝၯနေဆးၫႊန္းစာကိုဇလြန္ေဈးေဘး ဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္ ဂဃနဏဖတ္ခဲ့သည္.somefile";
-        const string expectedFileName = "သီဟိုဠ်မှ ဉာဏ်ကြီးရှင်သည် အာယုဝဍ္ဎနဆေးညွှန်းစာကိုဇလွန်ဈေးဘေး ဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက် ဂဃနဏဖတ်ခဲ့သည်.somefile";
+        const string zawgyiFileName = "နေဆးၫႊန္းစာကိုဇလြန္ေဈးေဘး အဓိ႒ာန္လ်က္.somefile";
+        const string expectedFileName = "နဆေးညွှန်းစာကိုဇလွန်ဈေးဘေး အဓိဋ္ဌာန်လျက်.somefile";
 
         CreateTestFileInTemporaryDirectory(zawgyiFileName, testDirectory);
 
