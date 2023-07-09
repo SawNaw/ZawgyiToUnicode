@@ -1,4 +1,4 @@
-﻿namespace ZawgyiToUnicode.ConversionRules;
+﻿namespace ZawgyiToUnicode.StringConverter;
 
 internal static class Rules
 {

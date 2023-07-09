@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using ZawgyiToUnicode.ConversionRules;
+using ZawgyiToUnicode.StringConverter;
 
 namespace ZawgyiToUnicode.Converter.Tests.ConvertTests;
 
