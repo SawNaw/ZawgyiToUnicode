@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
-using ZawgyiToUnicode.ConversionRules;
 
-namespace ZawgyiToUnicode.Converter;
+namespace ZawgyiToUnicode.StringConverter;
 
 public class Convert
 {

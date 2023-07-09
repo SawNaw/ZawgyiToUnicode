@@ -2,4 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZawgyiToUnicode.StringConverter\ZawgyiToUnicode.StringConverter.csproj" />
+  </ItemGroup>
 </Project>
