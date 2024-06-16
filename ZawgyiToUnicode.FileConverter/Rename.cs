@@ -20,4 +20,18 @@ public static class Rename
         File.Move(zawgyiFilePath, newPath);
         return new Result(true, $"Renamed {zawgyiFilePath} to {newPath}");
     }
+
+    public static Result FolderAndContentsToUnicode(string zawgyiFilePath)
+    {
+        if (!Directory.Exists(zawgyiFilePath))
+        {
+            return new Result(false, CouldNotFindFolderMessage(zawgyiFilePath));
+        }
+        return new Result(true, "");
+    }
+
+    internal static string CouldNotFindFolderMessage(string path)
+    {
+        return $"Could not find directory {path}";
+    }
 }
