@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+namespace ZawgyiToUnicode.Program;
 
-class Program
+public static class Program
 {
     static void Main(string[] args)
     {

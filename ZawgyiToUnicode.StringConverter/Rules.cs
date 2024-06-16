@@ -5,7 +5,7 @@ internal static class Rules
     internal static IReadOnlyDictionary<string, string> UnicodeToZawgyiRules { get; } = InitializeUnicodeToZawgyiRules();
     internal static IReadOnlyDictionary<string, string> ZawgyiToUnicodeRules { get; } = InitializeZawgyiToUnicodeRules();
 
-    private static IReadOnlyDictionary<string, string> InitializeUnicodeToZawgyiRules()
+    private static Dictionary<string, string> InitializeUnicodeToZawgyiRules()
     {
         return new Dictionary<string, string>()
         {
@@ -91,7 +91,7 @@ internal static class Rules
         };
     }
 
-    private static IReadOnlyDictionary<string, string> InitializeZawgyiToUnicodeRules()
+    private static Dictionary<string, string> InitializeZawgyiToUnicodeRules()
     {
         return new Dictionary<string, string>()
         {
